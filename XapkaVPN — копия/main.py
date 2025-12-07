@@ -1,3 +1,7 @@
+"""
+ГЛАВНЫЙ ФАЙЛ ПРОЕКТА - ТОЧКА ВХОДА
+Отвечает за запуск Telegram бота
+"""
 import asyncio
 from aiogram import Bot, Dispatcher
 from bot import handlers
@@ -6,7 +10,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 async def main():
-    bot = Bot(token='7770468932:AAGsw4xBLvAQMfkbkTk_ByO17Cn0onkke7U')
+    bot = Bot(token='')
     dp = Dispatcher()
 
     handlers.register(dp)
@@ -14,4 +18,5 @@ async def main():
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
+
     asyncio.run(main())
