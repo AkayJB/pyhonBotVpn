@@ -1,3 +1,7 @@
+"""
+ГЛАВНЫЙ ФАЙЛ С ЛОГИКОЙ БОТА
+Содержит обработчики для всех команд и callback-запросов
+"""
 from aiogram import Dispatcher, types, F
 from aiogram.filters import Command
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -149,4 +153,5 @@ def register(dp: Dispatcher):
     dp.callback_query.register(subscription_status, F.data == "status")
     dp.callback_query.register(show_vless_key, F.data == "vless")
     dp.callback_query.register(main_menu, F.data == "main_menu")
+
     dp.callback_query.register(activate_subscription, F.data == "extend_confirm")
